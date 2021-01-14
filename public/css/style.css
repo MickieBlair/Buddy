@@ -1,0 +1,20 @@
+.main-content{
+  padding: 1.5rem;
+}
+
+body{
+  background-color: #f9f9fa;
+}
+
+tbody, td, tfoot, th, thead, tr{
+  vertical-align: middle;
+}
+
+.search{
+  width: 50%;
+  display: inline-block;
+}
+
+.fixed-width{
+  width: 75px;
+}

@@ -1,0 +1,59 @@
+<%- include ('partials/header') -%>
+<title>Login</title>
+</head>
+
+<body>
+  <%- include ('partials/nav.ejs') -%>
+  <div class="main-content">
+    <div class="card w-50 mx-auto">
+      <div class="card-header">
+        <h1 class="h3 mb-3 fw-normal w-100 text-center fw-bold mt-2">Login</h1>
+      </div>
+      <div class="card-body">
+        <div class="row m-3">
+          <div class="col mx-auto">
+
+            <form action="/login" method="POST">
+
+
+
+              <div class="my-3">
+                <label for="userName" class="visually-hidden">Username</label>
+                <input type="text" id="userName" name="userName" class="form-control"
+                placeholder="Username" required autofocus>
+              </div>
+
+
+              <div class="my-3">
+                <label for="inputPassword" class="visually-hidden">Password</label>
+                <input type="password" id="inputPassword" name="password"
+                class="form-control" placeholder="Password" required>
+              </div>
+
+
+              <button class="w-100 btn btn-lg btn-primary my-3"
+              type="submit">Login</button>
+            </form>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <div class="card pt-3">
+
+          <h4 class="text-center pb-3">For new users</h4>
+          <a class="btn btn-dark m-2" href="/register"> Register an account </a>
+
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+  <%- include ('partials/footer') -%>
+
+
+    
