@@ -2,17 +2,38 @@ require('dotenv').config();
 const bodyParser = require("body-parser");
 const express = require("express");
 const ejs = require("ejs");
+const logger = require('morgan')
 const https = require('https');
 const http = require('http');
+const createError = require('http-errors');
 
 const app = express();
 
 
 app.use(express.static("public"));
+
 app.set('view engine', 'ejs');
+
+app.use(bodyParser.json());
+
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+
+app.use(logger('dev'));
+
+const db = require("./models");
+
+// db.sequelize.sync();
+// // drop the table if it already exists
+db.sequelize.sync({ force: true }).then(() => {
+  console.log("Drop and re-sync db.");
+});
+
+//Data Routes
+require("./routes/role.routes")(app);
+require("./routes/user.routes")(app);
+
 
 
 // Base
