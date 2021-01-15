@@ -24,11 +24,11 @@ app.use(logger('dev'));
 
 const db = require("./models");
 
-// db.sequelize.sync();
+db.sequelize.sync();
 // // drop the table if it already exists
-db.sequelize.sync({ force: true }).then(() => {
-  console.log("Drop and re-sync db.");
-});
+// db.sequelize.sync({ force: true }).then(() => {
+//   console.log("Drop and re-sync db.");
+// });
 
 //Data Routes
 require("./routes/role.routes")(app);
